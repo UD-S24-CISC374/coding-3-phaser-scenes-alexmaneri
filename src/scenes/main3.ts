@@ -33,6 +33,18 @@ export default class Main3 extends Phaser.Scene {
         ) as Phaser.Physics.Arcade.Sprite;
         ground.setScale(2).refreshBody();
 
+        this.platforms.create(1250, 100, "ground").setScale(0.4).refreshBody();
+        this.platforms.create(50, 400, "ground").setScale(0.5).refreshBody();
+        this.platforms.create(300, 250, "ground").setScale(0.35).refreshBody();
+        this.platforms.create(535, 105, "ground").setScale(0.2).refreshBody();
+        this.platforms.create(800, 325, "ground").setScale(0.35).refreshBody();
+        const rotatedPlatform = this.platforms.create(
+            1075,
+            200,
+            "ground"
+        ) as Phaser.Physics.Arcade.Sprite;
+        rotatedPlatform.setScale(0.5).refreshBody();
+
         this.player = this.physics.add.sprite(
             this.PlayerX,
             this.PlayerY,
@@ -71,8 +83,8 @@ export default class Main3 extends Phaser.Scene {
 
         this.shields = this.physics.add.staticGroup();
         const shield = this.shields.create(
-            1000,
-            200,
+            1250,
+            70,
             "shield"
         ) as Phaser.Physics.Arcade.Sprite;
         shield.setScale(0.05).refreshBody();
@@ -121,9 +133,9 @@ export default class Main3 extends Phaser.Scene {
             this.player?.anims.play("turn");
         }
         if (this.cursors.up.isDown && this.player?.body?.touching.down) {
-            this.player.setVelocityY(-430);
+            this.player.setVelocityY(-300);
         } else if (this.cursors.down.isDown) {
-            this.player?.setVelocityY(430);
+            this.player?.setVelocityY(300);
         }
     }
 }

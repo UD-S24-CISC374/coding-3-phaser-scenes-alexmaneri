@@ -33,6 +33,11 @@ export default class Main4 extends Phaser.Scene {
         ) as Phaser.Physics.Arcade.Sprite;
         ground.setScale(2).refreshBody();
 
+        this.platforms.create(1250, 200, "ground").setScale(0.4).refreshBody();
+        this.platforms.create(1050, 200, "ground").setScale(0.4).refreshBody();
+        this.platforms.create(850, 200, "ground").setScale(0.4).refreshBody();
+        this.platforms.create(650, 200, "ground").setScale(0.4).refreshBody();
+        this.platforms.create(450, 200, "ground").setScale(0.4).refreshBody();
         this.player = this.physics.add.sprite(
             this.PlayerX,
             this.PlayerY,
